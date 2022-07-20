@@ -1,0 +1,27 @@
+
+
+============================== 2022-07-20 17:05:47.447420 | 42a022b0-aa2e-455b-bb2c-8bd079ea1f4c ==============================
+[0m17:05:47.447476 [info ] [MainThread]: Running with dbt=1.3.0-a1
+[0m17:05:47.449727 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/meron/.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'data-warehouse', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m17:05:47.450789 [debug] [MainThread]: Tracking: tracking
+[0m17:05:47.459649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa5427b5300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa5427b4f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa5427b50f0>]}
+[0m17:05:47.462010 [info ] [MainThread]: Creating dbt configuration folder at /home/meron/.dbt
+[0m17:06:44.134171 [debug] [MainThread]: Starter project path: /home/meron/Dev/10acadamey/week_11/Data-warehouse/dbt-project/dbt-env/lib/python3.10/site-packages/dbt/include/starter_project
+[0m17:07:02.914906 [info ] [MainThread]: Profile data_warehouse written to /home/meron/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m17:07:02.916255 [info ] [MainThread]: 
+Your new dbt project "data_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:07:02.917659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa542d107c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa542d107f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa542d10730>]}
