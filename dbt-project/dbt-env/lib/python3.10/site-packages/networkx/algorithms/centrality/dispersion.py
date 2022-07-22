@@ -64,13 +64,17 @@ def dispersion(G, u=None, v=None, normalized=True, alpha=1.0, b=0.0, c=0.0):
         # neighbors that u and v share
         embededness = len(ST)
 
-        dispersion_val = total
         if normalized:
-            dispersion_val = (total + b) ** alpha
             if embededness + c != 0:
-                dispersion_val /= embededness + c
+                norm_disp = ((total + b) ** alpha) / (embededness + c)
+            else:
+                norm_disp = (total + b) ** alpha
+            dispersion = norm_disp
 
-        return dispersion_val
+        else:
+            dispersion = total
+
+        return dispersion
 
     if u is None:
         # v and u are not specified
