@@ -18,13 +18,10 @@ git clone https://github.com/meriab21/Data-warehouse
 cd Data-watehouse
 pip install -r requirements.txt
 ```
-    ```
      docker-compose up airflow-init
-    ```
 
-    ```
      docker-compose up
-    ```
+    
 
 ## Data
 
