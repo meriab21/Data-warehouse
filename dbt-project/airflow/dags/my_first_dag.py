@@ -7,13 +7,13 @@ from airflow.operators.bash import BashOperator
 
 
 default_args = {
-    'owner': 'coder2j',
+    'owner': 'airflow',
     'retries': 1,
     'retry_delay': timedelta(minutes=2),
 }
 
 with DAG(
-    dag_id="my_first_dag",
+    dag_id="my_first_dag_V2",
     default_args=default_args,
     description='This is my first dag',
     start_date=datetime(2022, 7, 23, 2),
@@ -24,4 +24,9 @@ with DAG(
         bash_command='echo "Hello World" this is my first task whoohoo'
     )
 
-    task1
+    task2 = BashOperator(
+        task_id='second_task',
+        bash_command='echo "Hello World" this is my second task whoohoo'
+    )
+
+    task1.set_downstream(task2)
