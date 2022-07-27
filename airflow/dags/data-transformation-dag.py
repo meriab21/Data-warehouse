@@ -10,14 +10,14 @@ deployment = os.environ.get("DEPLOYMENT", "dev")
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2022, 7, 19, 8, 25, 00),
+    "start_date": datetime(2022, 7, 26, 8, 25, 00),
     "concurrency": 1,
     "retries": 0,
 }
 
 
 dag = DAG(
-    dag_id="transformation_dag",
+    "transformation_dag",
     default_args=default_args,
     schedule_interval="@daily",
     catchup=False,

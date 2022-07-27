@@ -1,3 +1,15 @@
+import os
+from datetime import datetime
+
+from airflow import DAG
+from airflow.operators.dummy import DummyOperator
+from airflow.operators.python_operator import PythonOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+
+deployment = os.environ.get("DEPLOYMENT", "dev")
+
+
 def split_into_chunks(arr, n):
     return [arr[i: i + n] for i in range(0, len(arr), n)]
 
@@ -110,7 +122,7 @@ def insert_data():
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2022, 7, 19, 8, 25, 00),
+    "start_date": datetime(2022, 7, 25, 8, 25, 00),
     "concurrency": 1,
     "retries": 0,
 }
@@ -127,15 +139,11 @@ envs = ["dev", "stg", "prod"]
 with dag:
     start = DummyOperator(task_id="start")
 
-    # read_data_op = PythonOperator(
-    #     task_id="read_data", python_callable=read_data
-    # )
-
     create_table_op = PostgresOperator(
         task_id=f"create_pg_table_{deployment}",
-        postgres_conn_id=f"traffic_flow_{deployment}",
+        postgres_conn_id=f"data_warehouse{deployment}",
         sql="""
-            create table if not exists traffic_flow (
+            create table if not exists data_warehouse (
                 id serial,
                 track_id integer,
                 type text,
