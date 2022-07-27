@@ -61,7 +61,7 @@ def insert_data():
     import pandas as pd
     from sqlalchemy.types import Integer, Numeric, String
 
-    pg_hook = PostgresHook(postgres_conn_id=f"traffic_flow_{deployment}")
+    pg_hook = PostgresHook(postgres_conn_id="data_warehouse")
     conn = pg_hook.get_sqlalchemy_engine()
     df = pd.read_csv(
         "/opt/airflow/data/20181024_d1_0830_0900.csv",
@@ -141,7 +141,7 @@ with dag:
 
     create_table_op = PostgresOperator(
         task_id=f"create_pg_table_{deployment}",
-        postgres_conn_id=f"data_warehouse{deployment}",
+        postgres_conn_id="data_warehouse",
         sql="""
             create table if not exists data_warehouse (
                 id serial,
