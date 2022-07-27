@@ -1,0 +1,12 @@
+data_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal
+      user: airflow
+      pass: airflow
+      port: 5432
+      dbname: dev
+      schema: public
+      threads: 4

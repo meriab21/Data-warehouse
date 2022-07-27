@@ -1,0 +1,77 @@
+
+version: 2
+
+models:
+  - name: taxis
+    description: "A dbt model for the type: Taxi"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: cars
+    description: "A dbt model for type: cars"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: buses
+    description: "A dbt model for type: bus"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: Motercycles
+    description: "A dbt model for type: motercycle"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: distribution
+    description: "A dbt model distribution of data records"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: heavy_vehicles
+    description: "A dbt model for type: heavy vehicle"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: medium_vehicles
+    description: "A dbt model for type: medium vehicles"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  
+  - name: least_avg_speed
+    description: "A dbt model for the least average speed recorded"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null 
+  
+  
